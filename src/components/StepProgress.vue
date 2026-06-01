@@ -93,7 +93,7 @@ function goToStep(stepId) {
 .stepper {
   position: relative;
   margin-bottom: 22px;
-  padding: 18px;
+  padding: 22px 18px 18px;
   border: 1px solid var(--border);
   border-radius: 28px;
   background: rgba(255, 255, 255, 0.85);
@@ -103,9 +103,9 @@ function goToStep(stepId) {
 
 .stepper__track {
   position: absolute;
-  top: 36px;
-  left: 54px;
-  right: 54px;
+  top: 38px;
+  left: calc(100% / 6);
+  right: calc(100% / 6);
   height: 3px;
   border-radius: 999px;
   background: rgba(182, 160, 226, 0.25);
@@ -127,13 +127,14 @@ function goToStep(stepId) {
 
 .stepper__item {
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 12px;
-  padding: 10px 12px;
+  padding: 0 12px 8px;
   border: 0;
   border-radius: 18px;
   background: transparent;
-  text-align: left;
+  text-align: center;
   cursor: pointer;
   transition: transform 0.18s ease, background 0.18s ease;
 }
@@ -166,11 +167,15 @@ function goToStep(stepId) {
   font-size: 0.92rem;
   font-weight: 700;
   flex-shrink: 0;
+  position: relative;
+  z-index: 1;
 }
 
 .stepper__content {
   display: grid;
   gap: 2px;
+  justify-items: center;
+  margin-top: 6px;
 }
 
 .stepper__content strong {
